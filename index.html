@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio SKY</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f6f8;
+      color: #1f2937;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* =========================
+       LOGIN
+       ========================= */
+
+    #loginScreen {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #111827;
+    }
+
+    .login-box {
+      width: min(420px, 90%);
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    }
+
+    .login-logo {
+      font-size: 34px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .login-subtitle {
+      color: #6b7280;
+      margin-bottom: 30px;
+    }
+
+    .field {
+      margin-bottom: 16px;
+    }
+
+    .field label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 7px;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      padding: 11px 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      outline: none;
+      background: white;
+    }
+
+    .field textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: #111827;
+    }
+
+    .primary-btn {
+      width: 100%;
+      border: 0;
+      background: #111827;
+      color: white;
+      padding: 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .primary-btn:hover {
+      background: #000;
+    }
+
+    .error {
+      color: #b91c1c;
+      font-size: 13px;
+      margin-top: 12px;
+    }
+
+    /* =========================
+       APP
+       ========================= */
+
+    #app {
+      min-height: 100vh;
+    }
+
+    header {
+      height: 64px;
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 2px;
+      font-size: 20px;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logout-btn {
+      border: 1px solid #d1d5db;
+      background: white;
+      padding: 7px 12px;
+      border-radius: 7px;
+      cursor: pointer;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 28px 20px;
+    }
+
+    .top-nav {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      border: 1px solid #d1d5db;
+      background: white;
+      padding: 9px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .nav-btn.active {
+      background: #111827;
+      color: white;
+      border-color: #111827;
+    }
+
+    .page-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .page-title h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .add-btn {
+      background: #111827;
+      color: white;
+      border: 0;
+      border-radius: 8px;
+      padding: 10px 16px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    /* =========================
+       FILTERS
+       ========================= */
+
+    .filters {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      border: 1px solid #d1d5db;
+      background: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .filter-btn.active {
+      background: #111827;
+      color: white;
+      border-color: #111827;
+    }
+
+    /* =========================
+       CALENDAR
+       ========================= */
+
+    .calendar-box {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .calendar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 18px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .calendar-header button {
+      border: 1px solid #d1d5db;
+      background: white;
+      border-radius: 7px;
+      padding: 6px 10px;
+      cursor: pointer;
+    }
+
+    .month-title {
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .weekdays,
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+    }
+
+    .weekday {
+      padding: 10px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: #6b7280;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .day {
+      min-height: 110px;
+      border-right: 1px solid #e5e7eb;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 7px;
+      background: white;
+    }
+
+    .day:nth-child(7n) {
+      border-right: 0;
+    }
+
+    .day-number {
+      font-size: 12px;
+      color: #6b7280;
+      margin-bottom: 5px;
+    }
+
+    .today .day-number {
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .event {
+      font-size: 11px;
+      padding: 5px 6px;
+      margin-bottom: 4px;
+      border-radius: 5px;
+      background: #eef0f3;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .event.travel {
+      background: #e8f0ff;
+    }
+
+    .event-title {
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .event-person {
+      font-size: 9px;
+      margin-top: 2px;
+      color: #6b7280;
+    }
+
+    /* =========================
+       MODAL
+       ========================= */
+
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 50;
+    }
+
+    .modal {
+      background: white;
+      width: min(500px, 100%);
+      border-radius: 14px;
+      padding: 24px;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal h2 {
+      margin-top: 0;
+    }
+
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .secondary-btn {
+      border: 1px solid #d1d5db;
+      background: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .modal .primary-btn {
+      width: auto;
+    }
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 700px) {
+      header {
+        padding: 0 14px;
+      }
+
+      main {
+        padding: 20px 12px;
+      }
+
+      .day {
+        min-height: 80px;
+        padding: 4px;
+      }
+
+      .event {
+        font-size: 9px;
+      }
+
+      .weekday {
+        font-size: 9px;
+        padding: 7px 2px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       LOGIN
+       ========================= -->
+
+  <section id="loginScreen">
+
+    <div class="login-box">
+
+      <div class="login-logo">SKY</div>
+
+      <div class="login-subtitle">
+        Studio SKY
+      </div>
+
+      <form id="loginForm">
+
+        <div class="field">
+          <label>Email</label>
+          <input
+            id="loginEmail"
+            type="email"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <div class="field">
+          <label>Password</label>
+          <input
+            id="loginPassword"
+            type="password"
+            autocomplete="current-password"
+            required
+          >
+        </div>
+
+        <button
+          class="primary-btn"
+          type="submit"
+        >
+          Login
+        </button>
+
+        <div
+          id="loginError"
+          class="error"
+        ></div>
+
+      </form>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       APP
+       ========================= -->
+
+  <section
+    id="app"
+    class="hidden"
+  >
+
+    <header>
+
+      <div class="brand">
+        STUDIO SKY
+      </div>
+
+      <div class="header-right">
+
+        <span id="loggedInUser"></span>
+
+        <button
+          class="logout-btn"
+          onclick="logout()"
+        >
+          Logout
+        </button>
+
+      </div>
+
+    </header>
+
+
+    <main>
+
+      <!-- MAIN NAVIGATION -->
+
+      <div class="top-nav">
+
+        <button
+          class="nav-btn active"
+          id="skyCalendarNav"
+          onclick="switchPage('sky')"
+        >
+          SKY CALENDAR
+        </button>
+
+        <button
+          class="nav-btn"
+          id="travelNav"
+          onclick="switchPage('travel')"
+        >
+          TRAVEL
+        </button>
+
+      </div>
+
+
+      <!-- =========================
+           SKY CALENDAR
+           ========================= -->
+
+      <section id="skyPage">
+
+        <div class="page-title">
+
+          <h1>
+            SKY Calendar
+          </h1>
+
+          <button
+            class="add-btn"
+            onclick="openEventModal('OTHER')"
+          >
+            + Add Event
+          </button>
+
+        </div>
+
+
+        <div class="filters">
+
+          <button
+            class="filter-btn active"
+            id="filterSKY"
+            onclick="setPersonFilter('SKY')"
+          >
+            SKY
+          </button>
+
+          <button
+            class="filter-btn"
+            id="filterYASH"
+            onclick="setPersonFilter('YASH')"
+          >
+            YASH
+          </button>
+
+          <button
+            class="filter-btn"
+            id="filterSAMKIT"
+            onclick="setPersonFilter('SAMKIT')"
+          >
+            SAMKIT
+          </button>
+
+        </div>
+
+
+        <div id="skyCalendar"></div>
+
+      </section>
+
+
+      <!-- =========================
+           TRAVEL CALENDAR
+           ========================= -->
+
+      <section
+        id="travelPage"
+        class="hidden"
+      >
+
+        <div class="page-title">
+
+          <h1>
+            Travel Calendar
+          </h1>
+
+          <button
+            class="add-btn"
+            onclick="openEventModal('TRAVEL')"
+          >
+            + Add Travel
+          </button>
+
+        </div>
+
+
+        <div class="filters">
+
+          <button
+            class="filter-btn active"
+            id="travelFilterSKY"
+            onclick="setPersonFilter('SKY')"
+          >
+            SKY
+          </button>
+
+          <button
+            class="filter-btn"
+            id="travelFilterYASH"
+            onclick="setPersonFilter('YASH')"
+          >
+            YASH
+          </button>
+
+          <button
+            class="filter-btn"
+            id="travelFilterSAMKIT"
+            onclick="setPersonFilter('SAMKIT')"
+          >
+            SAMKIT
+          </button>
+
+        </div>
+
+
+        <div id="travelCalendar"></div>
+
+      </section>
+
+    </main>
+
+  </section>
+
+
+  <!-- =========================
+       EVENT MODAL
+       ========================= -->
+
+  <div
+    id="eventModal"
+    class="modal-overlay hidden"
+  >
+
+    <div class="modal">
+
+      <h2 id="modalTitle">
+        Add Event
+      </h2>
+
+      <form id="eventForm">
+
+        <input
+          id="eventId"
+          type="hidden"
+        >
+
+
+        <div class="field">
+
+          <label>
+            Title
+          </label>
+
+          <input
+            id="eventTitle"
+            required
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Type
+          </label>
+
+          <select id="eventType">
+
+            <option value="TRAVEL">
+              TRAVEL
+            </option>
+
+            <option value="WORK">
+              WORK
+            </option>
+
+            <option value="MEETING">
+              MEETING
+            </option>
+
+            <option value="PERSONAL">
+              PERSONAL
+            </option>
+
+            <option value="OTHER">
+              OTHER
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Who?
+          </label>
+
+          <select
+            id="eventPerson"
+            required
+          >
+
+            <option value="YASH">
+              YASH
+            </option>
+
+            <option value="SAMKIT">
+              SAMKIT
+            </option>
+
+            <option value="SKY">
+              SKY
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Start Date
+          </label>
+
+          <input
+            id="eventStart"
+            type="date"
+            required
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            End Date
+          </label>
+
+          <input
+            id="eventEnd"
+            type="date"
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Location
+          </label>
+
+          <input
+            id="eventLocation"
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Description
+          </label>
+
+          <textarea
+            id="eventDescription"
+          ></textarea>
+
+        </div>
+
+
+        <div class="modal-actions">
+
+          <button
+            type="button"
+            class="secondary-btn"
+            onclick="closeEventModal()"
+          >
+            Cancel
+          </button>
+
+          <button
+            type="submit"
+            class="primary-btn"
+          >
+            Save
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    /* =====================================================
+       SUPABASE CONNECTION
+       ===================================================== */
+
+    const SUPABASE_URL =
+      "https://jkdhdrazjhcorhndjcii.supabase.co";
+
+    const SUPABASE_KEY =
+      "sb_publishable_T8jx-0QWdN1_zgo3K8Apkw_n439Fw6_";
+
+    const { createClient } = supabase;
+
+    const db = createClient(
+      SUPABASE_URL,
+      SUPABASE_KEY
+    );
+
+
+    /* =====================================================
+       APP STATE
+       ===================================================== */
+
+    let currentPage = "sky";
+
+    let personFilter = "SKY";
+
+    let currentMonth = new Date();
+
+    currentMonth.setDate(1);
+
+    let events = [];
+
+
+    /* =====================================================
+       LOGIN
+       ===================================================== */
+
+    document
+      .getElementById("loginForm")
+      .addEventListener(
+        "submit",
+        async function (e) {
+
+          e.preventDefault();
+
+          const email =
+            document
+              .getElementById("loginEmail")
+              .value
+              .trim();
+
+          const password =
+            document
+              .getElementById("loginPassword")
+              .value;
+
+          const errorBox =
+            document
+              .getElementById("loginError");
+
+          errorBox.textContent = "";
+
+          const {
+            error
+          } = await db.auth.signInWithPassword({
+            email: email,
+            password: password
+          });
+
+          if (error) {
+
+            errorBox.textContent =
+              error.message;
+
+            return;
+          }
+
+          await showApp();
+
+        }
+      );
+
+
+    /* =====================================================
+       SHOW APP
+       ===================================================== */
+
+    async function showApp() {
+
+      const {
+        data: {
+          user
+        }
+      } = await db.auth.getUser();
+
+      if (!user) {
+        return;
+      }
+
+      document
+        .getElementById("loginScreen")
+        .classList
+        .add("hidden");
+
+      document
+        .getElementById("app")
+        .classList
+        .remove("hidden");
+
+      document
+        .getElementById("loggedInUser")
+        .textContent =
+          user.email;
+
+      await loadEvents();
+
+    }
+
+
+    /* =====================================================
+       LOGOUT
+       ===================================================== */
+
+    async function logout() {
+
+      await db.auth.signOut();
+
+      document
+        .getElementById("app")
+        .classList
+        .add("hidden");
+
+      document
+        .getElementById("loginScreen")
+        .classList
+        .remove("hidden");
+
+      document
+        .getElementById("loginPassword")
+        .value = "";
+
+    }
+
+
+    /* =====================================================
+       SESSION CHECK
+       ===================================================== */
+
+    (async function () {
+
+      const {
+        data: {
+          session
+        }
+      } = await db.auth.getSession();
+
+      if (session) {
+
+        await showApp();
+
+      }
+
+    })();
+
+
+    /* =====================================================
+       PAGE SWITCH
+       ===================================================== */
+
+    function switchPage(page) {
+
+      currentPage = page;
+
+      document
+        .getElementById("skyPage")
+        .classList
+        .toggle(
+          "hidden",
+          page !== "sky"
+        );
+
+      document
+        .getElementById("travelPage")
+        .classList
+        .toggle(
+          "hidden",
+          page !== "travel"
+        );
+
+      document
+        .getElementById("skyCalendarNav")
+        .classList
+        .toggle(
+          "active",
+          page === "sky"
+        );
+
+      document
+        .getElementById("travelNav")
+        .classList
+        .toggle(
+          "active",
+          page === "travel"
+        );
+
+      renderCurrentPage();
+
+    }
+
+
+    /* =====================================================
+       PERSON FILTER
+       ===================================================== */
+
+    function setPersonFilter(person) {
+
+      personFilter = person;
+
+      [
+        "SKY",
+        "YASH",
+        "SAMKIT"
+      ].forEach(function (p) {
+
+        const skyButton =
+          document
+            .getElementById(
+              "filter" + p
+            );
+
+        const travelButton =
+          document
+            .getElementById(
+              "travelFilter" + p
+            );
+
+        if (skyButton) {
+
+          skyButton
+            .classList
+            .toggle(
+              "active",
+              p === person
+            );
+
+        }
+
+        if (travelButton) {
+
+          travelButton
+            .classList
+            .toggle(
+              "active",
+              p === person
+            );
+
+        }
+
+      });
+
+      renderCurrentPage();
+
+    }
+
+
+    /* =====================================================
+       LOAD EVENTS
+       ===================================================== */
+
+    async function loadEvents() {
+
+      const {
+        data,
+        error
+      } = await db
+        .from("calendar_events")
+        .select("*")
+        .order(
+          "start_date",
+          {
+            ascending: true
+          }
+        );
+
+      if (error) {
+
+        console.error(error);
+
+        alert(
+          "Could not load calendar events.\n\n" +
+          error.message
+        );
+
+        return;
+      }
+
+      events = data || [];
+
+      renderCurrentPage();
+
+    }
+
+
+    /* =====================================================
+       FILTER EVENTS
+       ===================================================== */
+
+    function filteredEvents() {
+
+      let result = events;
+
+      /*
+        TRAVEL page only shows travel events.
+      */
+
+      if (currentPage === "travel") {
+
+        result =
+          result.filter(function (event) {
+
+            return event.event_type === "TRAVEL";
+
+          });
+
+      }
+
+
+      /*
+        YASH view:
+        Show YASH events and shared SKY events.
+      */
+
+      if (personFilter === "YASH") {
+
+        result =
+          result.filter(function (event) {
+
+            return (
+              event.person === "YASH" ||
+              event.person === "SKY"
+            );
+
+          });
+
+      }
+
+
+      /*
+        SAMKIT view:
+        Show SAMKIT events and shared SKY events.
+      */
+
+      if (personFilter === "SAMKIT") {
+
+        result =
+          result.filter(function (event) {
+
+            return (
+              event.person === "SAMKIT" ||
+              event.person === "SKY"
+            );
+
+          });
+
+      }
+
+
+      /*
+        SKY view:
+        Show everything.
+      */
+
+      return result;
+
+    }
+
+
+    /* =====================================================
+       RENDER CURRENT PAGE
+       ===================================================== */
+
+    function renderCurrentPage() {
+
+      const target =
+        currentPage === "sky"
+          ? document.getElementById(
+              "skyCalendar"
+            )
+          : document.getElementById(
+              "travelCalendar"
+            );
+
+      target.innerHTML =
+        buildCalendarHTML(
+          filteredEvents()
+        );
+
+    }
+
+
+    /* =====================================================
+       BUILD CALENDAR
+       ===================================================== */
+
+    function buildCalendarHTML(eventList) {
+
+      const year =
+        currentMonth.getFullYear();
+
+      const month =
+        currentMonth.getMonth();
+
+      const monthName =
+        currentMonth.toLocaleString(
+          "en-IN",
+          {
+            month: "long",
+            year: "numeric"
+          }
+        );
+
+      const firstDay =
+        new Date(
+          year,
+          month,
+          1
+        ).getDay();
+
+      const daysInMonth =
+        new Date(
+          year,
+          month + 1,
+          0
+        ).getDate();
+
+      let html = `
+
+        <div class="calendar-box">
+
+          <div class="calendar-header">
+
+            <button
+              onclick="changeMonth(-1)"
+            >
+              ‹
+            </button>
+
+            <div class="month-title">
+              ${monthName}
+            </div>
+
+            <button
+              onclick="changeMonth(1)"
+            >
+              ›
+            </button>
+
+          </div>
+
+          <div class="weekdays">
+
+            <div class="weekday">
+              SUN
+            </div>
+
+            <div class="weekday">
+              MON
+            </div>
+
+            <div class="weekday">
+              TUE
+            </div>
+
+            <div class="weekday">
+              WED
+            </div>
+
+            <div class="weekday">
+              THU
+            </div>
+
+            <div class="weekday">
+              FRI
+            </div>
+
+            <div class="weekday">
+              SAT
+            </div>
+
+          </div>
+
+          <div class="calendar-grid">
+
+      `;
+
+
+      /*
+        Empty cells before first day.
+      */
+
+      for (
+        let i = 0;
+        i < firstDay;
+        i++
+      ) {
+
+        html +=
+          `<div class="day"></div>`;
+
+      }
+
+
+      /*
+        Calendar days.
+      */
+
+      for (
+        let day = 1;
+        day <= daysInMonth;
+        day++
+      ) {
+
+        const dateString =
+          formatDate(
+            new Date(
+              year,
+              month,
+              day
+            )
+          );
+
+        const isToday =
+          dateString ===
+          formatDate(
+            new Date()
+          );
+
+        const dayEvents =
+          eventList.filter(
+            function (event) {
+
+              const start =
+                event.start_date;
+
+              const end =
+                event.end_date ||
+                event.start_date;
+
+              return (
+                dateString >= start &&
+                dateString <= end
+              );
+
+            }
+          );
+
+
+        html += `
+
+          <div
+            class="day ${
+              isToday
+                ? "today"
+                : ""
+            }"
+          >
+
+            <div class="day-number">
+              ${day}
+            </div>
+
+        `;
+
+
+        dayEvents.forEach(
+          function (event) {
+
+            html += `
+
+              <div
+                class="event ${
+                  event.event_type === "TRAVEL"
+                    ? "travel"
+                    : ""
+                }"
+                onclick="editEvent('${event.id}')"
+                title="${escapeHTML(
+                  event.title
+                )}"
+              >
+
+                <div class="event-title">
+                  ${escapeHTML(
+                    event.title
+                  )}
+                </div>
+
+                <div class="event-person">
+                  ${escapeHTML(
+                    event.person
+                  )}
+                </div>
+
+              </div>
+
+            `;
+
+          }
+        );
+
+
+        html += `
+          </div>
+        `;
+
+      }
+
+
+      html += `
+
+          </div>
+
+        </div>
+
+      `;
+
+      return html;
+
+    }
+
+
+    /* =====================================================
+       CHANGE MONTH
+       ===================================================== */
+
+    function changeMonth(direction) {
+
+      currentMonth.setMonth(
+        currentMonth.getMonth() +
+        direction
+      );
+
+      renderCurrentPage();
+
+    }
+
+
+    /* =====================================================
+       OPEN EVENT MODAL
+       ===================================================== */
+
+    function openEventModal(type) {
+
+      document
+        .getElementById("eventForm")
+        .reset();
+
+      document
+        .getElementById("eventId")
+        .value = "";
+
+      document
+        .getElementById("eventType")
+        .value = type;
+
+      document
+        .getElementById("modalTitle")
+        .textContent =
+          type === "TRAVEL"
+            ? "Add Travel"
+            : "Add Event";
+
+      document
+        .getElementById("eventModal")
+        .classList
+        .remove("hidden");
+
+    }
+
+
+    /* =====================================================
+       CLOSE EVENT MODAL
+       ===================================================== */
+
+    function closeEventModal() {
+
+      document
+        .getElementById("eventModal")
+        .classList
+        .add("hidden");
+
+    }
+
+
+    /* =====================================================
+       EDIT EVENT
+       ===================================================== */
+
+    async function editEvent(id) {
+
+      const event =
+        events.find(
+          function (e) {
+            return e.id === id;
+          }
+        );
+
+      if (!event) {
+        return;
+      }
+
+      document
+        .getElementById("eventId")
+        .value =
+          event.id;
+
+      document
+        .getElementById("eventTitle")
+        .value =
+          event.title || "";
+
+      document
+        .getElementById("eventType")
+        .value =
+          event.event_type || "OTHER";
+
+      document
+        .getElementById("eventPerson")
+        .value =
+          event.person || "YASH";
+
+      document
+        .getElementById("eventStart")
+        .value =
+          event.start_date || "";
+
+      document
+        .getElementById("eventEnd")
+        .value =
+          event.end_date || "";
+
+      document
+        .getElementById("eventLocation")
+        .value =
+          event.location || "";
+
+      document
+        .getElementById("eventDescription")
+        .value =
+          event.description || "";
+
+      document
+        .getElementById("modalTitle")
+        .textContent =
+          "Edit Event";
+
+      document
+        .getElementById("eventModal")
+        .classList
+        .remove("hidden");
+
+    }
+
+
+    /* =====================================================
+       SAVE EVENT
+       ===================================================== */
+
+    document
+      .getElementById("eventForm")
+      .addEventListener(
+        "submit",
+        async function (e) {
+
+          e.preventDefault();
+
+          const id =
+            document
+              .getElementById("eventId")
+              .value;
+
+
+          const startDate =
+            document
+              .getElementById("eventStart")
+              .value;
+
+          const endDate =
+            document
+              .getElementById("eventEnd")
+              .value ||
+              startDate;
+
+
+          const payload = {
+
+            title:
+              document
+                .getElementById(
+                  "eventTitle"
+                )
+                .value
+                .trim(),
+
+            event_type:
+              document
+                .getElementById(
+                  "eventType"
+                )
+                .value,
+
+            person:
+              document
+                .getElementById(
+                  "eventPerson"
+                )
+                .value,
+
+            start_date:
+              startDate,
+
+            end_date:
+              endDate,
+
+            location:
+              document
+                .getElementById(
+                  "eventLocation"
+                )
+                .value
+                .trim(),
+
+            description:
+              document
+                .getElementById(
+                  "eventDescription"
+                )
+                .value
+                .trim(),
+
+            updated_at:
+              new Date()
+                .toISOString()
+
+          };
+
+
+          let result;
+
+
+          /*
+            UPDATE
+          */
+
+          if (id) {
+
+            result =
+              await db
+                .from(
+                  "calendar_events"
+                )
+                .update(payload)
+                .eq(
+                  "id",
+                  id
+                );
+
+          }
+
+
+          /*
+            INSERT
+          */
+
+          else {
+
+            result =
+              await db
+                .from(
+                  "calendar_events"
+                )
+                .insert(
+                  payload
+                );
+
+          }
+
+
+          if (result.error) {
+
+            console.error(
+              result.error
+            );
+
+            alert(
+              "Could not save event:\n\n" +
+              result.error.message
+            );
+
+            return;
+
+          }
+
+
+          closeEventModal();
+
+          await loadEvents();
+
+        }
+      );
+
+
+    /* =====================================================
+       DATE FORMAT
+       ===================================================== */
+
+    function formatDate(date) {
+
+      const y =
+        date.getFullYear();
+
+      const m =
+        String(
+          date.getMonth() + 1
+        ).padStart(2, "0");
+
+      const d =
+        String(
+          date.getDate()
+        ).padStart(2, "0");
+
+      return (
+        y +
+        "-" +
+        m +
+        "-" +
+        d
+      );
+
+    }
+
+
+    /* =====================================================
+       HTML ESCAPE
+       ===================================================== */
+
+    function escapeHTML(value) {
+
+      return String(
+        value || ""
+      )
+        .replace(
+          /&/g,
+          "&amp;"
+        )
+        .replace(
+          /</g,
+          "&lt;"
+        )
+        .replace(
+          />/g,
+          "&gt;"
+        )
+        .replace(
+          /"/g,
+          "&quot;"
+        )
+        .replace(
+          /'/g,
+          "&#039;"
+        );
+
+    }
+
+  </script>
+
+</body>
+</html>
