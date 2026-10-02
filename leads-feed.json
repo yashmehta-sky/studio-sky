@@ -1,5 +1,5 @@
 {
-  "lastRun": "2026-10-02T16:18:10.156Z",
+  "lastRun": "2026-10-02T18:05:38.064Z",
   "seenLinks": [
     "https://inc42.com/buzz/seeds-fincap-raises-%e2%82%b9100-cr-to-scale-lending-tech-capabilities/",
     "https://inc42.com/buzz/simple-energy-raises-180-mn-to-unlock-next-growth-phase/",
@@ -5714,6 +5714,56 @@
       "sector": "",
       "headcount": null,
       "fit": "unknown"
+    }
+  ],
+  "feedStatus": [
+    {
+      "source": "Inc42",
+      "ok": true,
+      "itemCount": 24,
+      "error": null
+    },
+    {
+      "source": "Inc42 Buzz",
+      "ok": true,
+      "itemCount": 24,
+      "error": null
+    },
+    {
+      "source": "YourStory",
+      "ok": true,
+      "itemCount": 20,
+      "error": null
+    },
+    {
+      "source": "Entrackr",
+      "ok": false,
+      "itemCount": 0,
+      "error": "HTTP 404"
+    },
+    {
+      "source": "Google News · Funding",
+      "ok": true,
+      "itemCount": 100,
+      "error": null
+    },
+    {
+      "source": "Google News · GCC",
+      "ok": true,
+      "itemCount": 100,
+      "error": null
+    },
+    {
+      "source": "Google News · Expansion",
+      "ok": true,
+      "itemCount": 100,
+      "error": null
+    },
+    {
+      "source": "Google News · Relocation",
+      "ok": true,
+      "itemCount": 60,
+      "error": null
     }
   ]
 }
