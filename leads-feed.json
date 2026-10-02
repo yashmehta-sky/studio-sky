@@ -1,0 +1,79 @@
+{
+  "lastRun": "2026-10-02T00:58:09.707Z",
+  "seenLinks": [
+    "https://inc42.com/buzz/seeds-fincap-raises-%e2%82%b9100-cr-to-scale-lending-tech-capabilities/",
+    "https://inc42.com/buzz/simple-energy-raises-180-mn-to-unlock-next-growth-phase/",
+    "https://inc42.com/buzz/ex-livspace-cofounder-cbo-launch-home-interior-materials-venture-gravity/",
+    "https://inc42.com/buzz/consumer-appliance-startup-edt-raises-2-4-mn-to-expand-product-portfolio/",
+    "https://yourstory.com/2026/10/seeds-fincap-rs-100-cr-series-b-round-michael-susan-dell-foundation",
+    "https://yourstory.com/2026/09/ev-two-wheeler-maker-simple-energy-bags-rs-1750-cr-funding"
+  ],
+  "suggestions": [
+    {
+      "id": "scan-aHR0cHM6Ly9pbmM0",
+      "company": "Seeds Fincap",
+      "signalType": "Funding Round",
+      "city": "Delhi",
+      "headline": "Seeds Fincap Raises ₹100 Cr To Scale Lending Tech Capabilities",
+      "link": "https://inc42.com/buzz/seeds-fincap-raises-%e2%82%b9100-cr-to-scale-lending-tech-capabilities/",
+      "source": "Inc42",
+      "pubDate": "Thu, 01 Oct 2026 13:58:14 +0000",
+      "scannedAt": "2026-10-02T00:58:09.706Z"
+    },
+    {
+      "id": "scan-aHR0cHM6Ly9pbmM0",
+      "company": "Simple Energy",
+      "signalType": "Funding Round",
+      "city": "",
+      "headline": "Simple Energy Raises $180 Mn To Unlock Next Growth Phase",
+      "link": "https://inc42.com/buzz/simple-energy-raises-180-mn-to-unlock-next-growth-phase/",
+      "source": "Inc42",
+      "pubDate": "Wed, 30 Sep 2026 11:30:08 +0000",
+      "scannedAt": "2026-10-02T00:58:09.707Z"
+    },
+    {
+      "id": "scan-aHR0cHM6Ly9pbmM0",
+      "company": "[Update] Home Interior Startup Gravity Nets $15 Mn To Expand",
+      "signalType": "Expansion Announcement",
+      "city": "",
+      "headline": "[Update] Home Interior Startup Gravity Nets $15 Mn To Expand Into New Categories",
+      "link": "https://inc42.com/buzz/ex-livspace-cofounder-cbo-launch-home-interior-materials-venture-gravity/",
+      "source": "Inc42",
+      "pubDate": "Wed, 30 Sep 2026 10:27:07 +0000",
+      "scannedAt": "2026-10-02T00:58:09.707Z"
+    },
+    {
+      "id": "scan-aHR0cHM6Ly9pbmM0",
+      "company": "Consumer Appliance Startup EDT",
+      "signalType": "Funding Round",
+      "city": "Mumbai",
+      "headline": "Consumer Appliance Startup EDT Raises $2.4 Mn To Expand Product Portfolio",
+      "link": "https://inc42.com/buzz/consumer-appliance-startup-edt-raises-2-4-mn-to-expand-product-portfolio/",
+      "source": "Inc42 Buzz",
+      "pubDate": "Wed, 30 Sep 2026 09:09:21 +0000",
+      "scannedAt": "2026-10-02T00:58:09.707Z"
+    },
+    {
+      "id": "scan-aHR0cHM6Ly95b3Vy",
+      "company": "Seeds Fincap",
+      "signalType": "Funding Round",
+      "city": "",
+      "headline": "Seeds Fincap secures over Rs 100 Cr in Series B led by Michael & Susan Dell Foundation",
+      "link": "https://yourstory.com/2026/10/seeds-fincap-rs-100-cr-series-b-round-michael-susan-dell-foundation",
+      "source": "YourStory",
+      "pubDate": "Thu, 01 Oct 2026 07:34:18 GMT",
+      "scannedAt": "2026-10-02T00:58:09.707Z"
+    },
+    {
+      "id": "scan-aHR0cHM6Ly95b3Vy",
+      "company": "EV two-wheeler maker Simple Energy",
+      "signalType": "Funding Round",
+      "city": "Bengaluru",
+      "headline": "EV two-wheeler maker Simple Energy bags Rs 1,750 Cr funding",
+      "link": "https://yourstory.com/2026/09/ev-two-wheeler-maker-simple-energy-bags-rs-1750-cr-funding",
+      "source": "YourStory",
+      "pubDate": "Wed, 30 Sep 2026 11:30:00 GMT",
+      "scannedAt": "2026-10-02T00:58:09.707Z"
+    }
+  ]
+}
