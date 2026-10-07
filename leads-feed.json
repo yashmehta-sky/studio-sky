@@ -1,5 +1,5 @@
 {
-  "lastRun": "2026-10-06T23:43:06.541Z",
+  "lastRun": "2026-10-07T05:33:57.397Z",
   "seenLinks": [
     "https://inc42.com/buzz/seeds-fincap-raises-%e2%82%b9100-cr-to-scale-lending-tech-capabilities/",
     "https://inc42.com/buzz/simple-energy-raises-180-mn-to-unlock-next-growth-phase/",
@@ -534,9 +534,111 @@
     "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQX19kUm1nRlRtdS0wQ1RZSndDSS1mSVNCU213ZUtTX0IzQU9OYUpoaUJUS05ldjdicDNfOXR6dXAzcGZLbG1CV1VmblpPR2pjeW1WUl8zek9jTHlKbEppRE1LQkUzdWxXd2ZORXJ6UVpOMzNJXzBQTEp0V3VGSW8tMWF5aEJqT2FzV0ZWWGotd09nOTVkRmk0dU4ya2xRbEV1eGMtMjE1N2hWOFQtcHhhaHVvYWplcXBIOVdfdHV1WmV1bHAzZ2Q0ckJzODVUTjNIQWdB?oc=5",
     "https://news.google.com/rss/articles/CBMilAFBVV95cUxQaVJPN3dSSG1SVm1CNW95cTk0YklBNTJxV08yV0ZUVzB4NGtTVzlyMjAxS0RHNm5IYk9XZkxZbWZYd05kVHZuZjM0SlRnRzZtZjItRTVIUllMa1g2VEkyc0ZrS0hLTnB5QlcwSFJ1aHBwdE9MU2JrdHJxc190NVR2NzJ2SXlZSnVoRkFYNkNHY0U3bi1j?oc=5",
     "https://news.google.com/rss/articles/CBMiiAJBVV95cUxPaUdFbGV3cXpYWVhpRFZ1c2t1V2NBbFJ1TjNPcFJuWVZKTjlvSXgwYXBsbXdCVERVOTdmak83SDFvV05MLTRRNllKNW1UcHdKVmFyQXNTbWthaG9hbGNqWlBwUXpIY2k0eUVmLUNabG1sVFQxaTUxRGhsLWNuZ2xUNkYxNjJ4SG11eHF3V3RnMHppTV80VU5TNXp1MEMzM2V1LUFicVNGZEpsQ25YRmFFWVhsd1M3OUh0Mk5yQjVCaHJxVG5BM1lKTU02S3ZoQjRfNXpPYi1yZy1BUnY3akhXY1hPeGVFLWRjRWItNDJhSFRsM3VuWlcwbDRUNjNyNzVIUHJLVEwyNzbSAYgCQVVfeXFMT2lHRWxld3F6WFlYaURWdXNrdVdjQWxSdU4zT3BSbllWSk45b0l4MGFwbG13QlREVTk3ZmpPN0gxb1dOTC00UTZZSjVtVHB3SlZhckFzU21rYWhvYWxjalpQcFF6SGNpNHlFZi1DWmxtbFRUMWk1MURobC1jbmdsVDZGMTYyeEhtdXhxd1d0ZzB6aU1fNFVOUzV6dTBDMzNldS1BYnFTRmRKbENuWEZhRVlYbHdTNzlIdDJOckI1QmhycVRuQTNZSk1NNkt2aEI0XzV6T2ItcmctQVJ2N2pIV2NYT3hlRS1kY0ViLTQyYUhUbDN1blpXMGw0VDYzcjc1SFByS1RMMjc2?oc=5",
-    "https://news.google.com/rss/articles/CBMirgFBVV95cUxObXRZcmFkNE4taUxrMlVoTEdSSDFMT1IyWXQ3ZE5sdkU0RkpERmRUeGlNWE01M0otQVVMYUQwa2ZIekp4NnhORTgwUklidW95Z052NkFyQThUZHhBdkhjcVNVZktDMGlOcFEwc3U1WUVmQlgzblRGNU95VzJtaVZuamItX1VEWUNPWFRDVnZVREl0TTNPU0lyTUlQSHlzM0hPWTFFSFotYlVEYVc2MlHSAbMBQVVfeXFMTTJFMjNuY0pJWFpua2FnRlpnWmNfZnV0N25ONFQ4RTVFMEZLbWlRZEdiX1NSZ0EzUnJLRnZkbWlJS190NVBiR29Lc0dWUUY2aUZfSzBsa1lCWUZqWWRIdXJZSXotNWhBYnhHZjNGV1hsWmFTcHJXeXktczhwcmR6RUdqbVVnZDdoVktrekVES3Fyc2hkNXlqS2taREx4Z3RIa3NjNEdUX28xcXJMTmlvcU9SWUE?oc=5"
+    "https://news.google.com/rss/articles/CBMirgFBVV95cUxObXRZcmFkNE4taUxrMlVoTEdSSDFMT1IyWXQ3ZE5sdkU0RkpERmRUeGlNWE01M0otQVVMYUQwa2ZIekp4NnhORTgwUklidW95Z052NkFyQThUZHhBdkhjcVNVZktDMGlOcFEwc3U1WUVmQlgzblRGNU95VzJtaVZuamItX1VEWUNPWFRDVnZVREl0TTNPU0lyTUlQSHlzM0hPWTFFSFotYlVEYVc2MlHSAbMBQVVfeXFMTTJFMjNuY0pJWFpua2FnRlpnWmNfZnV0N25ONFQ4RTVFMEZLbWlRZEdiX1NSZ0EzUnJLRnZkbWlJS190NVBiR29Lc0dWUUY2aUZfSzBsa1lCWUZqWWRIdXJZSXotNWhBYnhHZjNGV1hsWmFTcHJXeXktczhwcmR6RUdqbVVnZDdoVktrekVES3Fyc2hkNXlqS2taREx4Z3RIa3NjNEdUX28xcXJMTmlvcU9SWUE?oc=5",
+    "https://inc42.com/buzz/quanfluence-raises-10-mn-to-build-full-stack-photonic-quantum-computer/",
+    "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNcm04MUxLb1ktMG9nZGFFVlAxU3hhaUFETXcxSXNDM0JaUFdyb1MwUUFUeFExWWI4YmdRNWhDS1NpWnBra2JlVWxnNFMtWTAyNHJiMnNTN01tYWZDUXhfZ0VvV18tdzJDOF81bTk0WGJEMVRmaDFhejFhQmN2ZnhObnRJZ0dvN1A1RGt2dGdtb1dRMWF4WmdzUkxPeDJvd0JGSFB5eUJPNXJGdFNicnRUV0N0Vy14WjB1QXU4c29BMGNWdG9TOGo4MnI3SFdscXZBSm9DTW9QYnE0UQ?oc=5",
+    "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPRzVUS2VGMGg5ODNTQmJ1Z01YVWdlTXo3b3dKdWRKa2x2MkN5WmRKVDhoVDQxOXdMV2JOdlZaVS1OeGFLaXBCc2pMbWtxd2JOUnpLcU5ZT1V4VEtnR3Jrazh6S1VEZlNoaTBncG5GYW1hSG8yd0tYb19KLXl3dzBxdlpjRTNUSzF1YXg0VzlnajRoS2o0STNtZC1ybFVHNi15SHRkMUM3eVA5eHVCZUJMWTU2OTJxSFJBS2dob0NXdGVoejN5WWZKVU9od0tMNTFCRTZFRFVn0gHbAUFVX3lxTE1kcjlQU1dWbDhpMTdTYjg1bTBMOEtzVUJhRGJRZkZRQlZYV0FXVjd1dG1KazhTVGdXYWRvRHVsd2JjSUlVX18tMGtzWTFQVXpELVF6RnZfcFhsMDFrdV9XSUhpRXJzUEIwVEtHcDVzRE52QzhBendweWhCdkJVVmc0Qk1YcFVrRTgyMFhucnNWUWpuSDVTZGE4M2dDWGFFcmtUb3VxV2otM2N0U3Y5TjRYZGdfZWZURExhN284VDc2aDU1b3REcnBCVXQ2WVRWNkdZV2FXOTZFbVhHcw?oc=5",
+    "https://news.google.com/rss/articles/CBMimAFBVV95cUxPWGFLUTNydWdMWGJNMC1UUlhaVjVRaUNMVkxYeWZUV2xBY3NEQXhJYS00OWlGVGpRNjEtSmdUZXlkcTFJYURmUjJudThvNlVTT1diV1V3RXFTTWV4czRPd0VHVFNZaGtuZldSdWMyRVNMTmtBVVB4MFJkaWNjWlh2c0tKLWxjX2U0ejlDYTdNVE5PSUhkbXM5cg?oc=5",
+    "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ac5d9c4f8a24e8f965fbfaedc814615&url=https%3a%2f%2ftechcrunch.com%2f2026%2f08%2f05%2findian-ev-two-wheeler-startup-river-raises-120m-after-scaling-with-one-model%2f&c=11963982162160047129&mkt=en-us",
+    "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ac5d9c4f8a24e8f965fbfaedc814615&url=https%3a%2f%2ftechcrunch.com%2f2026%2f07%2f15%2findian-ai-coding-startup-emergent-becomes-a-unicorn-just-over-a-year-after-launch%2f&c=826900998778902789&mkt=en-us"
   ],
   "suggestions": [
+    {
+      "id": "scan-aHR0cHM6Ly9uZXdz",
+      "company": "Physical AI startup Mowito",
+      "signalType": "Funding Round",
+      "city": "",
+      "amount": "$3 Mn",
+      "round": "Pre-Seed",
+      "sector": "Deeptech / AI",
+      "headcount": null,
+      "fit": "likely-fit",
+      "headline": "Physical AI startup Mowito raises $3 million in pre-seed funding round",
+      "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPRzVUS2VGMGg5ODNTQmJ1Z01YVWdlTXo3b3dKdWRKa2x2MkN5WmRKVDhoVDQxOXdMV2JOdlZaVS1OeGFLaXBCc2pMbWtxd2JOUnpLcU5ZT1V4VEtnR3Jrazh6S1VEZlNoaTBncG5GYW1hSG8yd0tYb19KLXl3dzBxdlpjRTNUSzF1YXg0VzlnajRoS2o0STNtZC1ybFVHNi15SHRkMUM3eVA5eHVCZUJMWTU2OTJxSFJBS2dob0NXdGVoejN5WWZKVU9od0tMNTFCRTZFRFVn0gHbAUFVX3lxTE1kcjlQU1dWbDhpMTdTYjg1bTBMOEtzVUJhRGJRZkZRQlZYV0FXVjd1dG1KazhTVGdXYWRvRHVsd2JjSUlVX18tMGtzWTFQVXpELVF6RnZfcFhsMDFrdV9XSUhpRXJzUEIwVEtHcDVzRE52QzhBendweWhCdkJVVmc0Qk1YcFVrRTgyMFhucnNWUWpuSDVTZGE4M2dDWGFFcmtUb3VxV2otM2N0U3Y5TjRYZGdfZWZURExhN284VDc2aDU1b3REcnBCVXQ2WVRWNkdZV2FXOTZFbVhHcw?oc=5",
+      "source": "Google News · Funding",
+      "pubDate": "Tue, 07 Jul 2026 07:00:00 GMT",
+      "scannedAt": "2026-10-07T05:33:57.396Z"
+    },
+    {
+      "id": "scan-aHR0cHM6Ly9pbmM0",
+      "company": "Quanfluence",
+      "signalType": "Funding Round",
+      "city": "Bengaluru",
+      "amount": "$10 Mn",
+      "round": "",
+      "sector": "",
+      "headcount": null,
+      "fit": "unknown",
+      "headline": "Quanfluence Raises $10 Mn To Build Full-Stack Photonic Quantum Computer",
+      "link": "https://inc42.com/buzz/quanfluence-raises-10-mn-to-build-full-stack-photonic-quantum-computer/",
+      "source": "Inc42",
+      "pubDate": "Wed, 07 Oct 2026 03:30:00 +0000",
+      "scannedAt": "2026-10-07T05:33:57.394Z"
+    },
+    {
+      "id": "scan-aHR0cHM6Ly9uZXdz",
+      "company": "Aum Ventures",
+      "signalType": "Funding Round",
+      "city": "",
+      "amount": "₹225 Cr",
+      "round": "",
+      "sector": "",
+      "headcount": null,
+      "fit": "unknown",
+      "headline": "Aum Ventures raises ₹225 Cr first close for ₹750 crore India Innovation Fund II",
+      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNcm04MUxLb1ktMG9nZGFFVlAxU3hhaUFETXcxSXNDM0JaUFdyb1MwUUFUeFExWWI4YmdRNWhDS1NpWnBra2JlVWxnNFMtWTAyNHJiMnNTN01tYWZDUXhfZ0VvV18tdzJDOF81bTk0WGJEMVRmaDFhejFhQmN2ZnhObnRJZ0dvN1A1RGt2dGdtb1dRMWF4WmdzUkxPeDJvd0JGSFB5eUJPNXJGdFNicnRUV0N0Vy14WjB1QXU4c29BMGNWdG9TOGo4MnI3SFdscXZBSm9DTW9QYnE0UQ?oc=5",
+      "source": "Google News · Funding",
+      "pubDate": "Mon, 10 Aug 2026 07:00:00 GMT",
+      "scannedAt": "2026-10-07T05:33:57.396Z"
+    },
+    {
+      "id": "scan-aHR0cHM6Ly9uZXdz",
+      "company": "JioHotstar",
+      "signalType": "Expansion Announcement",
+      "city": "",
+      "amount": "",
+      "round": "",
+      "sector": "",
+      "headcount": null,
+      "fit": "unknown",
+      "headline": "JioHotstar expands to MENA through STARZPLAY partnership",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPWGFLUTNydWdMWGJNMC1UUlhaVjVRaUNMVkxYeWZUV2xBY3NEQXhJYS00OWlGVGpRNjEtSmdUZXlkcTFJYURmUjJudThvNlVTT1diV1V3RXFTTWV4czRPd0VHVFNZaGtuZldSdWMyRVNMTmtBVVB4MFJkaWNjWlh2c0tKLWxjX2U0ejlDYTdNVE5PSUhkbXM5cg?oc=5",
+      "source": "Google News · Expansion",
+      "pubDate": "Wed, 07 Oct 2026 03:05:53 GMT",
+      "scannedAt": "2026-10-07T05:33:57.396Z"
+    },
+    {
+      "id": "scan-aHR0cDovL3d3dy5i",
+      "company": "Indian EV startup River",
+      "signalType": "Funding Round",
+      "city": "",
+      "amount": "$120 Mn",
+      "round": "Series C",
+      "sector": "Climatetech",
+      "headcount": null,
+      "fit": "likely-mismatch",
+      "headline": "Indian EV startup River raises $120M Series C to scale production, launch more models",
+      "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ac5d9c4f8a24e8f965fbfaedc814615&url=https%3a%2f%2ftechcrunch.com%2f2026%2f08%2f05%2findian-ev-two-wheeler-startup-river-raises-120m-after-scaling-with-one-model%2f&c=11963982162160047129&mkt=en-us",
+      "source": "Bing News · Funding",
+      "pubDate": "Wed, 05 Aug 2026 04:26:00 GMT",
+      "scannedAt": "2026-10-07T05:33:57.397Z"
+    },
+    {
+      "id": "scan-aHR0cDovL3d3dy5i",
+      "company": "Indian AI coding startup Emergent becomes a unicorn with $13",
+      "signalType": "Funding Round",
+      "city": "",
+      "amount": "$130 Mn",
+      "round": "Series C",
+      "sector": "Deeptech / AI",
+      "headcount": null,
+      "fit": "likely-mismatch",
+      "headline": "Indian AI coding startup Emergent becomes a unicorn with $130M Series C",
+      "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ac5d9c4f8a24e8f965fbfaedc814615&url=https%3a%2f%2ftechcrunch.com%2f2026%2f07%2f15%2findian-ai-coding-startup-emergent-becomes-a-unicorn-just-over-a-year-after-launch%2f&c=826900998778902789&mkt=en-us",
+      "source": "Bing News · Funding",
+      "pubDate": "Wed, 15 Jul 2026 05:00:00 GMT",
+      "scannedAt": "2026-10-07T05:33:57.397Z"
+    },
     {
       "id": "scan-aHR0cHM6Ly9uZXdz",
       "company": "CureMeAbroad",
@@ -9128,13 +9230,13 @@
     {
       "source": "Google News · Relocation",
       "ok": true,
-      "itemCount": 60,
+      "itemCount": 61,
       "error": null
     },
     {
       "source": "Bing News · Funding",
       "ok": true,
-      "itemCount": 7,
+      "itemCount": 12,
       "error": null
     },
     {
@@ -9146,7 +9248,7 @@
     {
       "source": "Bing News · Expansion",
       "ok": true,
-      "itemCount": 0,
+      "itemCount": 4,
       "error": null
     },
     {
